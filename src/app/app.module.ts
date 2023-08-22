@@ -9,11 +9,16 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
+import { CadastrarPrecoComponent } from './cadastrar-preco/cadastrar-preco.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    CadastrarPrecoComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +26,9 @@ import {MatCardModule} from '@angular/material/card';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

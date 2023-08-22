@@ -1,8 +1,12 @@
 .example-card {
   max-width: 400px;
+  margin: 0 auto;
 }
 
 .example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJxA5cTf-5dh5Eusm0puHbvAhOrCRPtckzjA&usqp=CAU');
   background-size: cover;
+}
+.price{
+  margin-left: auto;
 }

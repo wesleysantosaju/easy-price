@@ -1,12 +1,24 @@
-<h1 mat-dialog-title>Hi</h1>
-<div mat-dialog-content>
-  <p>What's your favorite animal?</p>
-  <mat-form-field>
-    <mat-label>Favorite Animal</mat-label>
-    <input matInput>
-  </mat-form-field>
-</div>
-<div mat-dialog-actions>
-  <button mat-button>No Thanks</button>
-  <button mat-button cdkFocusInitial>Ok</button>
-</div>
+
+  <p>
+    <mat-toolbar color="primary">Formulário de Cadastro</mat-toolbar>
+  </p>
+  <mat-card-content>
+    <form>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Nome">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Selecione a categoria</mat-label>
+        <mat-select>
+          <mat-option value="null"> </mat-option>
+          <mat-option value="front-end">Front-End</mat-option>
+          <mat-option value="back-end">Back-End</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions class="full-widt">
+    <button mat-raised-button color="primary"class="bt-separator">Salvar</button>
+    <button mat-raised-button>Cancelar</button>
+  </mat-card-actions>

@@ -17,6 +17,9 @@ import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
+import { ReactiveFormsModule } from '@angular/forms'; // Importe o ReactiveFormsModule
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import {MatSelectModule} from '@angular/material/select';
     MatFormFieldModule,
     FormsModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

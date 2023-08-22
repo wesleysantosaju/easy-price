@@ -12,6 +12,10 @@ import {MatCardModule} from '@angular/material/card';
 import { CadastrarPrecoComponent } from './cadastrar-preco/cadastrar-preco.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatDialogModule} from '@angular/material/dialog';
+import {FormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import {MatDividerModule} from '@angular/material/divider';
     MatIconModule,
     MatCardModule,
     MatButtonModule,
-    MatDividerModule
+    MatDividerModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

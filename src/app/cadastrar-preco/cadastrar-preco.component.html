@@ -1,21 +1,55 @@
 
   <p>
-    <mat-toolbar color="primary">Formulário de Cadastro</mat-toolbar>
+    <mat-toolbar color="primary">Cadastrar Posto</mat-toolbar>
   </p>
   <mat-card-content>
     <form>
       <mat-form-field class="full-width">
-        <input matInput placeholder="Nome">
+        <input matInput #campoNome maxlength="25" placeholder="Seu nome">
+        <mat-hint align="end">{{campoNome.value.length}} / 25</mat-hint>
       </mat-form-field>
 
       <mat-form-field class="full-width">
-        <mat-label>Selecione a categoria</mat-label>
+        <input matInput #campoPosto maxlength="20" placeholder="Nome do Posto">
+        <mat-hint align="end">{{campoPosto.value.length}} / 20</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Selecione o tipo do combustível</mat-label>
         <mat-select>
           <mat-option value="null"> </mat-option>
-          <mat-option value="front-end">Front-End</mat-option>
-          <mat-option value="back-end">Back-End</mat-option>
+          <mat-option value="gasolina">Gasolina</mat-option>
+          <mat-option value="etanol">Etanol</mat-option>
+          <mat-option value="diesel">Diesel</mat-option>
         </mat-select>
       </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Valor do combustível">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Endereço correto">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Selecione a forma de pagamento</mat-label>
+        <mat-select>
+          <mat-option value="null"> </mat-option>
+          <mat-option value="dinheiro">Dinheiro</mat-option>
+          <mat-option value="cartao">Cartão</mat-option>
+          <mat-option value="todos">Todas as Formas</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+
+      <button  mat-raised-button color="primary" (click)="fileInput.click()" color="primary">Selecionar Imagem</button>
+      <input type="file" #fileInput style="display: none" (change)="handleImageInput($event)">
+      <span>{{ selectedFileName }}</span>
+
+      <br>
+
     </form>
   </mat-card-content>
   <mat-card-actions class="full-widt">

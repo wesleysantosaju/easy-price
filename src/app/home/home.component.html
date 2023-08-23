@@ -24,10 +24,10 @@
         <hr>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-raised-button color="primary">
+        <a mat-raised-button color="primary" [href]="getGoogleMapsLink(posto.endereco)" target="_blank">
           <mat-icon>local_gas_station</mat-icon>
           Navegue até o posto
-        </button>
+        </a>
         <button mat-button class="price">R${{ posto.valorCombustivel }}</button>
       </mat-card-actions>
     </mat-card>

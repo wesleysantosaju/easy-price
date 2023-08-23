@@ -45,4 +45,9 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  getGoogleMapsLink(endereco: string): string {
+    const enderecoFormatado = encodeURIComponent(endereco);
+    return `https://www.google.com/maps/search/?api=1&query=${enderecoFormatado}`;
+  }
+
 }

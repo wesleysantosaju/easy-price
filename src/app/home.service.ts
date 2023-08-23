@@ -19,4 +19,8 @@ export class HomeService {
   getPostosCombustivel(): Observable<PostoCombustivel[]> {
     return this.http.get<PostoCombustivel[]>(`${this.apiUrl}/listar-postos`);
   }
+
+  filtrarPorEndereco(endereco: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/postos-por-endereco/${endereco}`);
+  }
 }

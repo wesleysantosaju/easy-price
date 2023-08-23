@@ -22,7 +22,7 @@
     </mat-form-field>
 
     <mat-form-field class="full-width">
-      <input matInput formControlName="valorCombustivel" placeholder="Valor do combustível">
+      <input matInput currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" formControlName="valorCombustivel" placeholder="Valor do combustível">
     </mat-form-field>
 
     <mat-form-field class="full-width">

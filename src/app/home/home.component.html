@@ -1,7 +1,7 @@
 <div class="pad-top">
   <mat-form-field class="full-width text-right">
-    <input matInput #nome maxlength="25" type="text" [(ngModel)]="enderecoFiltro" placeholder="Pesquise um endereço/cidade" (ngModelChange)="filtrarPorEndereco()">
-    <mat-hint align="end">{{nome.value.length}} / 25</mat-hint>
+    <input matInput #nome maxlength="100" type="text" [(ngModel)]="enderecoFiltro" placeholder="Pesquise um endereço/cidade" (ngModelChange)="filtrarPorEndereco()">
+    <mat-hint align="end">{{nome.value.length}} / 100</mat-hint>
   </mat-form-field>
 
   <div *ngIf="exibirMensagem" class="mensagem">

@@ -21,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms'; // Importe o ReactiveForms
 import { HttpClientModule } from '@angular/common/http';
 import { CurrencyMaskModule } from "ng2-currency-mask";
 import {MatExpansionModule} from '@angular/material/expansion';
+import { AddComentarioComponent } from './add-comentario/add-comentario.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     AppComponent,
     NavbarComponent,
     CadastrarPrecoComponent,
-    HomeComponent
+    HomeComponent,
+    AddComentarioComponent
   ],
   imports: [
     BrowserModule,

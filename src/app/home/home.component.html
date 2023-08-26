@@ -23,6 +23,23 @@
         <p>Cidade/Estado: {{ posto.endereco }}</p>
         <hr>
       </mat-card-content>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Comentários ({{ posto.comentarios ? posto.comentarios.length : 0 }})
+            </mat-panel-title>
+            <mat-panel-description>
+              <mat-icon class="circle">account_circle</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div *ngFor="let comentario of posto.comentarios">
+          <mat-card-subtitle>@{{ comentario.nome }}</mat-card-subtitle>
+          <p>{{ comentario.comentario }}</p>
+          <hr>
+        </div>
+          <hr>
+          <button mat-raised-button color="warn" style="margin-left: 235px;">Comentar</button>
+        </mat-expansion-panel>
       <mat-card-actions>
         <a mat-raised-button color="primary" [href]="getGoogleMapsLink(posto.endereco)" target="_blank">
           <mat-icon>local_gas_station</mat-icon>

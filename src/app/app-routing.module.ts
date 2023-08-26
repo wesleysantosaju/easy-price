@@ -7,7 +7,8 @@ import { AddComentarioComponent } from './add-comentario/add-comentario.componen
 const routes: Routes = [
   { path : '', component: HomeComponent },
   { path: 'cadastrar', component: CadastrarPrecoComponent},
-  { path: 'addcoment', component: AddComentarioComponent }
+  { path: 'addcoment', component: AddComentarioComponent },
+  { path: 'adicionar-comentario', component: AddComentarioComponent }
 ];
 
 @NgModule({

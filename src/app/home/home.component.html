@@ -32,13 +32,19 @@
               <mat-icon class="circle">account_circle</mat-icon>
             </mat-panel-description>
           </mat-expansion-panel-header>
+          <ng-container *ngIf="posto.comentarios && posto.comentarios.length > 0; else noComments">
           <div *ngFor="let comentario of posto.comentarios">
           <mat-card-subtitle>@{{ comentario.nome }}</mat-card-subtitle>
           <p>{{ comentario.comentario }}</p>
           <hr>
+
         </div>
-          <button mat-raised-button color="warn" style="margin-left: 235px;" (click)="abrirDialogAdicionarComentario(posto.id)">Comentar</button>
+      </ng-container>
+      <button mat-raised-button color="warn" style="margin-left: 210px;" (click)="abrirDialogAdicionarComentario(posto.id)"><mat-icon> add_comment</mat-icon>Comentar</button>
         </mat-expansion-panel>
+        <ng-template #noComments>
+          <p>Ainda não há nenhum comentário nesse anuncio.</p>
+        </ng-template>
       <mat-card-actions>
         <a mat-raised-button color="primary" [href]="getGoogleMapsLink(posto.endereco)" target="_blank">
           <mat-icon>local_gas_station</mat-icon>

@@ -52,6 +52,7 @@ export class HomeComponent implements OnInit {
         // Encontrar o posto correspondente
         const posto = this.postosCombustivel.find(p => p.id === postoId);
         if (posto) {
+          this.exibirMensagem = false;
           posto.comentarios = comentarios;
         }
       },

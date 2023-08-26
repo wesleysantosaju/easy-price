@@ -19,7 +19,6 @@ export class HomeComponent implements OnInit {
   comentarios: any[] = []; // Array para armazenar os comentários
 
   constructor(private homeService: HomeService){
-    this.carregarComentarios();
 
   }
 
@@ -90,12 +89,5 @@ export class HomeComponent implements OnInit {
         console.error('Erro ao adicionar comentário', error);
       }
     );
-  }
-
-  carregarComentarios(): void {
-    this.homeService.getComentariosPorPosto(this.postoId)
-      .subscribe(comentarios => {
-        this.comentarios = comentarios;
-      });
   }
 }

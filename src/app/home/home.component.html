@@ -37,7 +37,7 @@
           <p>{{ comentario.comentario }}</p>
           <hr>
         </div>
-          <button mat-raised-button color="warn" style="margin-left: 235px;">Comentar</button>
+          <button mat-raised-button color="warn" style="margin-left: 235px;" (click)="abrirDialogAdicionarComentario(posto.id)">Comentar</button>
         </mat-expansion-panel>
       <mat-card-actions>
         <a mat-raised-button color="primary" [href]="getGoogleMapsLink(posto.endereco)" target="_blank">

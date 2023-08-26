@@ -1,7 +1,9 @@
+import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../home.service';
 import { PostoCombustivel } from '../posto-combustivel';
 import { Comentario } from '../comentario';
+import { AddComentarioComponent } from '../add-comentario/add-comentario.component';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +20,8 @@ export class HomeComponent implements OnInit {
   posto: any; // Objeto para armazenar os detalhes do posto
   comentarios: any[] = []; // Array para armazenar os comentários
 
-  constructor(private homeService: HomeService){
+  constructor(private homeService: HomeService,
+    public dialog: MatDialog){
 
   }
 
@@ -77,17 +80,13 @@ export class HomeComponent implements OnInit {
     return `https://www.google.com/maps/search/?api=1&query=${enderecoFormatado}`;
   }
 
-  // Função para adicionar um comentário a um posto de combustível
-  adicionarComentario(posto: PostoCombustivel, novoComentario: string): void {
-    const comentario: Comentario = { id: 0, nome: 'Nome do Usuário', comentario: novoComentario };
-    this.homeService.adicionarComentario(posto.id, comentario).subscribe(
-      (novoComentario: Comentario) => {
-        // Adicionar o novo comentário à lista de comentários do posto
-        posto.comentarios.push(novoComentario);
-      },
-      error => {
-        console.error('Erro ao adicionar comentário', error);
-      }
-    );
+  abrirDialogAdicionarComentario(postoId: number) {
+    const dialogRef = this.dialog.open(AddComentarioComponent, {
+      data: { postoId } // Passa o postoId para o modal
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      // Lógica após fechar o modal, se necessário
+    });
   }
 }

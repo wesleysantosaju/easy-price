@@ -1,12 +1,12 @@
 export class Comentario {
-  id: number;
-  nome: string;
-  comentario: string;
-  // Pode adicionar mais propriedades se necessário
+  id: number | null = null;
+  nome: string = '';
+  comentario: string = '';
+  postoId: number | null = null;
 
-  constructor(id: number, nome: string, comentario: string) {
-    this.id = id;
+  constructor(nome: string, comentario: string, postoId: number) {
     this.nome = nome;
     this.comentario = comentario;
+    this.postoId = postoId;
   }
 }

@@ -20,6 +20,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms'; // Importe o ReactiveFormsModule
 import { HttpClientModule } from '@angular/common/http';
 import { CurrencyMaskModule } from "ng2-currency-mask";
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { CurrencyMaskModule } from "ng2-currency-mask";
     MatSelectModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CurrencyMaskModule
+    CurrencyMaskModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { PostoCombustivel } from './posto-combustivel';
 import { Observable } from 'rxjs';
+import { Comentario } from './comentario';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +23,17 @@ export class HomeService {
 
   filtrarPorEndereco(endereco: string): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/postos-por-endereco/${endereco}`);
+  }
+
+  // Função para obter os comentários de um posto de combustível pelo ID
+  getComentariosPorPosto(postoId: number): Observable<Comentario[]> {
+    const url = `${this.apiUrl}/postos/${postoId}/comentarios`;
+    return this.http.get<Comentario[]>(url);
+  }
+
+  // Função para adicionar um comentário a um posto de combustível pelo ID
+  adicionarComentario(postoId: number, comentario: Comentario): Observable<Comentario> {
+    const url = `${this.apiUrl}/postos/${postoId}/comentarios`;
+    return this.http.post<Comentario>(url, comentario);
   }
 }

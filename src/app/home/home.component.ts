@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../home.service';
 import { PostoCombustivel } from '../posto-combustivel';
+import { Comentario } from '../comentario';
 
 @Component({
   selector: 'app-home',
@@ -10,10 +11,17 @@ import { PostoCombustivel } from '../posto-combustivel';
 export class HomeComponent implements OnInit {
 
   postosCombustivel: PostoCombustivel[] = [];
+  postoId: number = 1; // Substitua pelo ID do posto que você quer mostrar comentários
+
   enderecoFiltro: string = ''; // Variável para armazenar o endereço digitado
   exibirMensagem: boolean = false; // Variável para controlar a exibição da mensagem
+  posto: any; // Objeto para armazenar os detalhes do posto
+  comentarios: any[] = []; // Array para armazenar os comentários
 
-  constructor(private homeService: HomeService){}
+  constructor(private homeService: HomeService){
+    this.carregarComentarios();
+
+  }
 
   ngOnInit(): void {
     this.carregarPostosCombustivel();
@@ -23,10 +31,30 @@ export class HomeComponent implements OnInit {
     this.homeService.getPostosCombustivel().subscribe(
       (postos: PostoCombustivel[]) => {
         this.postosCombustivel = postos;
-        this.exibirMensagem = false; // Certifique-se de redefinir a variável
+        this.exibirMensagem = false;
+
+        // Carregar comentários para cada posto
+        for (const posto of this.postosCombustivel) {
+          this.carregarComentariosPorPosto(posto.id);
+        }
       },
       error => {
         console.error('Erro ao carregar postos de combustível', error);
+      }
+    );
+  }
+
+  carregarComentariosPorPosto(postoId: number) {
+    this.homeService.getComentariosPorPosto(postoId).subscribe(
+      (comentarios: Comentario[]) => {
+        // Encontrar o posto correspondente
+        const posto = this.postosCombustivel.find(p => p.id === postoId);
+        if (posto) {
+          posto.comentarios = comentarios;
+        }
+      },
+      error => {
+        console.error('Erro ao carregar comentários do posto', error);
       }
     );
   }
@@ -50,4 +78,24 @@ export class HomeComponent implements OnInit {
     return `https://www.google.com/maps/search/?api=1&query=${enderecoFormatado}`;
   }
 
+  // Função para adicionar um comentário a um posto de combustível
+  adicionarComentario(posto: PostoCombustivel, novoComentario: string): void {
+    const comentario: Comentario = { id: 0, nome: 'Nome do Usuário', comentario: novoComentario };
+    this.homeService.adicionarComentario(posto.id, comentario).subscribe(
+      (novoComentario: Comentario) => {
+        // Adicionar o novo comentário à lista de comentários do posto
+        posto.comentarios.push(novoComentario);
+      },
+      error => {
+        console.error('Erro ao adicionar comentário', error);
+      }
+    );
+  }
+
+  carregarComentarios(): void {
+    this.homeService.getComentariosPorPosto(this.postoId)
+      .subscribe(comentarios => {
+        this.comentarios = comentarios;
+      });
+  }
 }

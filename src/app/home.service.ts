@@ -32,8 +32,9 @@ export class HomeService {
   }
 
   // Função para adicionar um comentário a um posto de combustível pelo ID
-  adicionarComentario(postoId: number, comentario: Comentario): Observable<Comentario> {
-    const url = `${this.apiUrl}/postos/${postoId}/comentarios`;
-    return this.http.post<Comentario>(url, comentario);
+
+  cadastrarComentario(comentario: any): Observable<any> {
+    const url = `${this.apiUrl}/comentarios`;
+    return this.http.post(url, comentario);
   }
 }

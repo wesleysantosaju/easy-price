@@ -1,13 +1,13 @@
 <mat-toolbar color="primary">Calculadora de Custo</mat-toolbar>
 <p style="text-align: center; padding-top: 15px;">Insira o valor dos combustíveis para saber qual vale mais a pena abastecer.</p>
 <mat-card-content>
-  <form>
+  <form (ngSubmit)="calcularCusto()" [formGroup]="form">
     <mat-form-field class="full-width">
-      <input matInput currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' , align: 'left'}" formControlName="valorCombustivel" placeholder="Valor do Álcool" maxlength="200">
+      <input matInput currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' , align: 'left'}" formControlName="valorAlcool" placeholder="Valor do Álcool" maxlength="200">
     </mat-form-field>
 
     <mat-form-field class="full-width">
-      <input matInput currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' , align: 'left'}" formControlName="valorCombustivel" placeholder="Valor da Gasolina" maxlength="200">
+      <input matInput currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' , align: 'left'}" formControlName="valorGasolina" placeholder="Valor da Gasolina" maxlength="200">
     </mat-form-field>
 
     <br><br>
@@ -15,4 +15,8 @@
     <button mat-raised-button color="primary" class="bt-separator" type="submit">Calcular</button>
     <button mat-raised-button type="button">Cancelar</button>
   </form>
+
+  <div *ngIf="resultadoCalculo !== null" style="text-align: center; margin-top: 20px; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+    {{ resultadoCalculo }}
+  </div>
 </mat-card-content>

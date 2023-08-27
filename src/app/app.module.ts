@@ -22,6 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { CurrencyMaskModule } from "ng2-currency-mask";
 import {MatExpansionModule} from '@angular/material/expansion';
 import { AddComentarioComponent } from './add-comentario/add-comentario.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 
 @NgModule({
@@ -49,7 +52,9 @@ import { AddComentarioComponent } from './add-comentario/add-comentario.componen
     ReactiveFormsModule,
     HttpClientModule,
     CurrencyMaskModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSnackBarModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

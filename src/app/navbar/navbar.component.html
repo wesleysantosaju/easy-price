@@ -1,5 +1,24 @@
 <p>
   <mat-toolbar color="primary">
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon class="pont">menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>monetization_on</mat-icon>
+        <span>Calculadora de custo</span>
+      </button>
+
+      <button mat-menu-item>
+        <mat-icon>perm_device_information</mat-icon>
+        <span>Dicas</span>
+      </button>
+
+      <button mat-menu-item>
+        <mat-icon>live_help</mat-icon>
+        <span>Suporte</span>
+      </button>
+    </mat-menu>
     <mat-icon>commute</mat-icon><span>Easy Price</span>
     <button mat-raised-button color="accent" class="add" (click)="openDialog()">Adicionar</button>
   </mat-toolbar>

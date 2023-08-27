@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
 import { CadastrarPrecoComponent } from '../cadastrar-preco/cadastrar-preco.component';
+import { CalcMcombustivelComponent } from '../calc-mcombustivel/calc-mcombustivel.component';
 
 @Component({
   selector: 'app-navbar',
@@ -16,6 +17,9 @@ export class NavbarComponent {
 
   openDialog() {
     this.dialog.open(CadastrarPrecoComponent);
+  }
+  openDialogCalc() {
+    this.dialog.open(CalcMcombustivelComponent);
   }
 }
 

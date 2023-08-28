@@ -1,4 +1,4 @@
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../home.service';
 import { PostoCombustivel } from '../posto-combustivel';
@@ -90,4 +90,5 @@ export class HomeComponent implements OnInit {
       // Lógica após fechar o modal, se necessário
     });
   }
+
 }

@@ -21,6 +21,7 @@ export class AddComentarioComponent {
     private comentarioService: HomeService,
     private route: ActivatedRoute,
     private snackBar: MatSnackBar,
+    public dialogExit: MatDialogRef<AddComentarioComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.comentarioForm = this.formBuilder.group({
@@ -93,6 +94,8 @@ export class AddComentarioComponent {
     });
 
   }
-
+  closeModal(){
+    this.dialogExit.close();
+  }
 
 }

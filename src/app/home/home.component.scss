@@ -23,3 +23,8 @@
   width: 100%;
   text-align: right; /* Define o alinhamento à direita */
 }
+body {
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
+}

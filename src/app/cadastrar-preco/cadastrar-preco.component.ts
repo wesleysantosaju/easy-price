@@ -1,3 +1,4 @@
+import { MatDialogRef } from '@angular/material/dialog';
 import { Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { HomeService } from '../home.service';
@@ -18,7 +19,7 @@ export class CadastrarPrecoComponent {
   selectedFileName: string = '';
   exibirFormulario: boolean = true;
 
-  constructor(private formBuilder: FormBuilder, private home: HomeService, private snackBar: MatSnackBar) {
+  constructor(private formBuilder: FormBuilder, private home: HomeService, private snackBar: MatSnackBar, public dialogExit: MatDialogRef<CadastrarPrecoComponent>) {
     this.form = this.formBuilder.group({
       nome: '',
       nomePosto: '',
@@ -102,6 +103,9 @@ fecharFormulario() {// Esconder o snackbar ou diálogo, se estiver aberto
       this.selectedFileName = file.name;
       console.log('Imagem selecionada:', file);
     }
+  }
+  closeModal(){
+    this.dialogExit.close();
   }
 
 }

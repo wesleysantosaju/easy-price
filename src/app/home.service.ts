@@ -9,7 +9,7 @@ import { Comentario } from './comentario';
 })
 export class HomeService {
 
-  private readonly apiUrl = 'http://localhost:8081/api';
+  private readonly apiUrl = 'https://easy-price-e6f3vgzbm-wesleysantosaju.vercel.app/';
 
   constructor(private http: HttpClient) { }
 

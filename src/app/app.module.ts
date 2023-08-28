@@ -25,6 +25,7 @@ import { AddComentarioComponent } from './add-comentario/add-comentario.componen
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatMenuModule} from '@angular/material/menu';
 import { CalcMcombustivelComponent } from './calc-mcombustivel/calc-mcombustivel.component';
+import { InfoComponent } from './info/info.component';
 
 
 
@@ -35,7 +36,8 @@ import { CalcMcombustivelComponent } from './calc-mcombustivel/calc-mcombustivel
     CadastrarPrecoComponent,
     HomeComponent,
     AddComentarioComponent,
-    CalcMcombustivelComponent
+    CalcMcombustivelComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,

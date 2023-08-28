@@ -1,5 +1,7 @@
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { InfoComponent } from '../info/info.component';
 
 @Component({
   selector: 'app-calc-mcombustivel',
@@ -10,7 +12,9 @@ export class CalcMcombustivelComponent implements OnInit {
   form!: FormGroup;
   resultadoCalculo: string | null = null;
 
-  constructor(private formBuilder: FormBuilder){}
+  constructor(private formBuilder: FormBuilder,
+    public dialog: MatDialog,
+    public dialogExit: MatDialogRef<CalcMcombustivelComponent>){}
 
 
   ngOnInit() {
@@ -28,11 +32,19 @@ export class CalcMcombustivelComponent implements OnInit {
       const result = valorAlcool / valorGasolina;
 
       if (result <= 0.7) {
-        this.resultadoCalculo = "Recomendado o abastecimento com álcool!";
+        this.resultadoCalculo = "Resultado: " + result.toFixed(2) + ", recomendado o abastecimento com etanol!";
       } else {
-        this.resultadoCalculo = "Recomendado o abastecimento com gasolina!";
+        this.resultadoCalculo = "Resultado: " +  result.toFixed(2) + ", recomendado o abastecimento com gasolina!";
       }
     }
+  }
+
+  openDialog(){
+    this.dialog.open(InfoComponent);
+  }
+
+  closeModal(){
+    this.dialogExit.close();
   }
 
 }

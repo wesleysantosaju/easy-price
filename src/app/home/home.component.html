@@ -14,7 +14,7 @@
         <mat-card-title>{{ posto.nomePosto }}</mat-card-title>
         <mat-card-subtitle>@{{ posto.nome }}</mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image [src]="'http://localhost:8081/api/imagem-posto/' + posto.imagemPath" alt="Imagem do posto de combustível">
+      <img mat-card-image [src]="'https://easy-price-api-f4c785011c72.herokuapp.com/api/imagem-posto/' + posto.imagemPath" alt="Imagem do posto de combustível">
       <mat-card-content>
         <p class="notop">
           Tipo do Combustível: {{ posto.tipoCombustivel }}

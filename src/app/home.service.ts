@@ -9,7 +9,7 @@ import { Comentario } from './comentario';
 })
 export class HomeService {
 
-  private readonly apiUrl = 'https://easy-price-e6f3vgzbm-wesleysantosaju.vercel.app/';
+  private readonly apiUrl = 'https://easy-price-api-f4c785011c72.herokuapp.com/api';
 
   constructor(private http: HttpClient) { }
 

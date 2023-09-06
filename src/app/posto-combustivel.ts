@@ -1,5 +1,4 @@
 import { Comentario } from "./comentario";
-
 export class PostoCombustivel {
   id: number;
   nome: string;
@@ -8,10 +7,12 @@ export class PostoCombustivel {
   valorCombustivel: number;
   endereco: string;
   formaPagamento: string;
-  imagemPath?: string; // Mantenha a interrogação aqui para indicar que é opcional
+  imagemPath?: string;
+  comentarios: Comentario[];
+  // Adicione o campo dataCriacao
+  dataCriacao: Date;
 
-  comentarios: Comentario[]; // Adicione a propriedade comentarios
-
+  // Mova o campo dataCriacao para o final do construtor
   constructor(
     id: number,
     nome: string,
@@ -20,8 +21,8 @@ export class PostoCombustivel {
     valorCombustivel: number,
     endereco: string,
     formaPagamento: string,
-    comentarios: Comentario[], // Certifique-se de passar um array vazio ou pré-populado, se necessário
-    imagemPath?: string // Adicione a declaração aqui
+    comentarios: Comentario[],
+    imagemPath?: string
   ) {
     this.id = id;
     this.nome = nome;
@@ -31,6 +32,9 @@ export class PostoCombustivel {
     this.endereco = endereco;
     this.formaPagamento = formaPagamento;
     this.comentarios = comentarios;
-    this.imagemPath = imagemPath; // Agora você pode atribuir a propriedade diretamente
+    this.imagemPath = imagemPath;
+
+    // Agora você pode definir dataCriacao aqui como opcional se desejar
+    this.dataCriacao = new Date();
   }
 }

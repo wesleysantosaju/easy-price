@@ -19,6 +19,8 @@ export class HomeComponent implements OnInit {
   exibirMensagem: boolean = false; // Variável para controlar a exibição da mensagem
   posto: any; // Objeto para armazenar os detalhes do posto
   comentarios: any[] = []; // Array para armazenar os comentários
+  dataFormatada?: string; // Declare a variável dataFormatada
+  postoD?: PostoCombustivel;
 
   constructor(private homeService: HomeService,
     public dialog: MatDialog){
@@ -27,6 +29,17 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.carregarPostosCombustivel();
+    this.postoD = new PostoCombustivel(
+      1,                 // id
+      'Nome',            // nome
+      'Nome do Posto',   // nomePosto
+      'Gasolina',        // tipoCombustivel
+      2.99,              // valorCombustivel
+      'Endereço',        // endereco
+      'Forma de Pagamento',  // formaPagamento
+      [],                // comentarios (uma lista vazia, por exemplo)
+      'Imagem Path'      // imagemPath (opcional)
+    );
   }
 
   carregarPostosCombustivel() {

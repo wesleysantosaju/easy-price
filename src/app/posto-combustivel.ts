@@ -9,10 +9,8 @@ export class PostoCombustivel {
   formaPagamento: string;
   imagemPath?: string;
   comentarios: Comentario[];
-  // Adicione o campo dataCriacao
-  data_criacao: Date;
+  dataCriacao: Date; // Corrigi o nome para ser 'dataCriacao' ao invés de 'data_criacao'
 
-  // Mova o campo dataCriacao para o final do construtor
   constructor(
     id: number,
     nome: string,
@@ -34,7 +32,6 @@ export class PostoCombustivel {
     this.comentarios = comentarios;
     this.imagemPath = imagemPath;
 
-    // Agora você pode definir dataCriacao aqui como opcional se desejar
-    this.data_criacao = new Date();
+    this.dataCriacao = new Date(); // Inicializa a data de criação com a data atual
   }
 }

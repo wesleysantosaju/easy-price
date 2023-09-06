@@ -10,7 +10,7 @@ export class PostoCombustivel {
   imagemPath?: string;
   comentarios: Comentario[];
   // Adicione o campo dataCriacao
-  dataCriacao: Date;
+  data_criacao: Date;
 
   // Mova o campo dataCriacao para o final do construtor
   constructor(
@@ -35,6 +35,6 @@ export class PostoCombustivel {
     this.imagemPath = imagemPath;
 
     // Agora você pode definir dataCriacao aqui como opcional se desejar
-    this.dataCriacao = new Date();
+    this.data_criacao = new Date();
   }
 }

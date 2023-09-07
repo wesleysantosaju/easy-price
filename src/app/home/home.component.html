@@ -12,7 +12,7 @@
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>{{ posto.nomePosto }}</mat-card-title>
-        <mat-label class="dtpostagem">Postado: {{ posto?.dataCriacao | date:'dd/MM/yyyy' }} às {{ posto?.dataCriacao | date:'HH:mm' }}h</mat-label>
+        <mat-label class="dtpostagem">Postado em {{ posto?.dataCriacao | date:'dd/MM/yyyy' }} às {{ posto?.dataCriacao | date:'HH:mm' }}h</mat-label>
         <mat-card-subtitle>@{{ posto.nome }}</mat-card-subtitle>
       </mat-card-header>
       <img mat-card-image [src]="'https://grand-desire-production.up.railway.app/api/imagem-posto/' + posto.imagemPath" alt="Imagem do posto de combustível">

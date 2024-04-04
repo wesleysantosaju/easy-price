@@ -26,6 +26,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatMenuModule} from '@angular/material/menu';
 import { CalcMcombustivelComponent } from './calc-mcombustivel/calc-mcombustivel.component';
 import { InfoComponent } from './info/info.component';
+import { DicasBarComponent } from './dicas-bar/dicas-bar.component';
 
 
 
@@ -37,7 +38,8 @@ import { InfoComponent } from './info/info.component';
     HomeComponent,
     AddComentarioComponent,
     CalcMcombustivelComponent,
-    InfoComponent
+    InfoComponent,
+    DicasBarComponent
   ],
   imports: [
     BrowserModule,

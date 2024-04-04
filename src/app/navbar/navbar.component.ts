@@ -3,6 +3,7 @@ import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dial
 import {MatButtonModule} from '@angular/material/button';
 import { CadastrarPrecoComponent } from '../cadastrar-preco/cadastrar-preco.component';
 import { CalcMcombustivelComponent } from '../calc-mcombustivel/calc-mcombustivel.component';
+import { DicasBarComponent } from '../dicas-bar/dicas-bar.component';
 
 @Component({
   selector: 'app-navbar',
@@ -20,6 +21,9 @@ export class NavbarComponent {
   }
   openDialogCalc() {
     this.dialog.open(CalcMcombustivelComponent);
+  }
+  openDialogInfo() {
+    this.dialog.open(DicasBarComponent);
   }
 }
 

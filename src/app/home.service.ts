@@ -9,7 +9,7 @@ import { Comentario } from './comentario';
 })
 export class HomeService {
 
-  private readonly apiUrl = 'https://grand-desire-production.up.railway.app/api';
+  private readonly apiUrl = 'http://localhost:8081/api';
 
   constructor(private http: HttpClient) { }
 

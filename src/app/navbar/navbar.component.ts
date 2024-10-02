@@ -4,6 +4,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { CadastrarPrecoComponent } from '../cadastrar-preco/cadastrar-preco.component';
 import { CalcMcombustivelComponent } from '../calc-mcombustivel/calc-mcombustivel.component';
 import { DicasBarComponent } from '../dicas-bar/dicas-bar.component';
+import { SobreComponent } from '../sobre/sobre.component';
 
 @Component({
   selector: 'app-navbar',
@@ -24,6 +25,9 @@ export class NavbarComponent {
   }
   openDialogInfo() {
     this.dialog.open(DicasBarComponent);
+  }
+  openSobre() {
+    this.dialog.open(SobreComponent);
   }
 }
 

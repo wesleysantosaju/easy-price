@@ -14,8 +14,13 @@
         <span>Dicas</span>
       </button>
 
-      <button mat-menu-item>
+      <button mat-menu-item (click)="openSobre()">
         <mat-icon>live_help</mat-icon>
+        <span>Sobre</span>
+      </button>
+
+      <button mat-menu-item>
+        <mat-icon>help</mat-icon>
         <span>Suporte</span>
       </button>
     </mat-menu>
